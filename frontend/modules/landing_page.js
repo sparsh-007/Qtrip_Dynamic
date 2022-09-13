@@ -1,20 +1,10 @@
 import config from "../conf/index.js";
 
-async function init() {
-  //Fetches list of all cities along with their images and description
-  // const fetchCities = async () => {
-  //     try {
-  //   const result = await fetch("http://15.206.192.41:8082/cities");
-  //   const data = await result.json();
-  //   return data;
-  // } catch (e) {
-  //   return null;
-  // }
+async function init(config) {
 
-  // }
   let cities = await fetchCities();
 
-  console.log(cities);
+  //console.log(cities);
   //Updates the DOM with the cities
   cities.forEach((key) => {
     addCityToDOM(key.id, key.city, key.description, key.image);
@@ -24,7 +14,7 @@ async function init() {
 //Implementation of fetch call
 async function fetchCities(){
   try {
-    const result = await fetch("http://15.206.192.41:8082/cities");
+    const result = await fetch(config.backendEndpoint + '/cities');
     const data = await result.json();
     return data;
   } catch (e) {

@@ -47,12 +47,12 @@ function addAdventureToDOM(adventures) {
         <img src="${adv.image}" class="activity-card img"/>
         <div class="category-banner">${adv.category}</div>
         <div class="card-body d-md-flex justify-content-between">
-          <h5 class="card-title">${adv.name}</h5>
-          <p class="card-text">₹${adv.costPerHead}</p>
+          <h5>${adv.name}</h5>
+          <p>₹${adv.costPerHead}</p>
         </div>
         <div class="card-body d-md-flex justify-content-between"> 
-          <h5 class="card-title">Duration</h5>
-          <p class="card-text">${adv.duration} Hours</p>
+          <h5>Duration</h5>
+          <p>${adv.duration} Hours</p>
         </div>
       </div>
     </a>`;
